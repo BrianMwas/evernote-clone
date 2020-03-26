@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()" color="danger">
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-title>New Notebook</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="save()" [disabled]="name.length <= 0">
+          Save
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-input class="note-input" type="text" [autofocus]="true" [(ngModel)]="name" placeholder="Awesome Input"></ion-input>
+</ion-content>

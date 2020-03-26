@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="done()" color="primary">
+        Done
+      </ion-button>
+    </ion-buttons>
+    
+      <ion-buttons slot="end">
+        <ion-button (click)="cancel()" color="warning">
+          Cancel
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-button (click)="moveNote()" size="small" class="ion-text-left" fill="clear" color="primary" shape="round">
+    <ion-icon slot="start" name="bookmarks"></ion-icon>
+
+    {{ note.notebook ? note.notebook.name : 'Select Notebook' }}
+  </ion-button>
+  <div class="ion-padding">
+  
+    <ion-input class="note-title" type="text" [autofocus]="true" [(ngModel)]="note.title" placeholder="Note title"></ion-input>
+  
+    <ion-textarea placeholder="Start writing" [(ngModel)]="note.content" rows="6"></ion-textarea>
+  </div>
+</ion-content>
